@@ -1,0 +1,51 @@
+Declare,metatab-latest
+Title,Monthly Retail Trade Report
+Description,"Retail and Food Service sales volume, by months, since 1992"
+Identifier,dd92f1e1-fa93-47e8-baa3-af12b101b385
+Name,census.gov-monthly_retail-1.1.1
+Dataset,monthly_retail
+Origin,census.gov
+Time,
+Space,
+Grain,
+Group,Economy
+Variant,
+Version,1.1.1
+Version.Major,1
+Version.Minor,1
+Version.Patch,1
+Created,2020-05-19T14:36:58
+Modified,2020-05-19T16:46:18
+Updatefrequencey,P1M
+
+Section,Contacts,Email,Organization,Url
+Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com
+
+Section,Documentation,Title,Description,
+Documentation,file:README.md,README,,
+Homepage,https://www.census.gov/retail/index.html,homepage,Dataset home page,
+
+Section,References,Name,Description,
+Reference,https://www.census.gov/retail/mrts/www/mrtssales92-present.xls,marts_source,Retail and Food Service Sales spreadsheet,
+
+Section,Resources,Name,Description,
+Datafile,notebooks/Extract.ipynb#adj,marts_adjusted,"Monthly retail sales, adjusted",
+Datafile,notebooks/Extract.ipynb#nadj,marts_non_adjusted,"Monthly retail sales, non adjusted",
+
+Section,Schema,DataType,Description,,
+Table,marts_adjusted,,,,
+Table.Column,naics,string,NAICS industry codes for the row,,
+Table.Column,category,string,Description of industry categories,,
+Table.Column,date,datetime,"Year and month of observation, in ISO format. FOr CY and PY, the start of the year. ",,
+Table.Column,year,integer,"Year, extracted from the date",,
+Table.Column,month,integer,"Month, of observation, for monthly observation",,
+Table.Column,sales,integer,"Sales value, in dollars. ",,
+Table.Column,flag,string,"M for monthly observation, CY for current year total, PY for previous year total",,
+Table,marts_non_adjusted,,,,
+Table.Column,naics,string,NAICS industry codes for the row,,
+Table.Column,category,string,Description of industry categories,,
+Table.Column,date,datetime,"Year and month of observation, in ISO format. FOr CY and PY, the start of the year. ",,
+Table.Column,year,integer,"Year, extracted from the date",,
+Table.Column,month,integer,"Month, of observation, for monthly observation",,
+Table.Column,sales,integer,"Sales value, in dollars. ",,
+Table.Column,flag,string,"M for monthly observation, CY for current year total, PY for previous year total",,
